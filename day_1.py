@@ -7,9 +7,7 @@ Tristan Barber
 def prev_measurement_num(filename):
     increased_count = 0
     with open(filename) as file:
-        count = 0
         for depth in file:
-            count += 1
             try:
                 previous_depth = current_depth
             except UnboundLocalError:
