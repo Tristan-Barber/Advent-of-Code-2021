@@ -15,7 +15,7 @@ def prev_measurement_num(filename):
             current_depth = int(depth)
             if current_depth > previous_depth:
                 increased_count += 1
-        return increased_count-1
+        return increased_count -1
 
 """
 When it reaches a decreased number, it goes back to the decreased and starts the letters over
@@ -40,16 +40,24 @@ G: 769 (increased)
 H: 792 (increased)
 """
 
-def sum_comp(filename):
+def easy_iterable(filename):
+    depths = []
     with open(filename) as file:
-        count = 0
         for depth in file:
-            if count == 3:
-                
+            depths.append(depth)
+        return depths
+
+def sum_comp(filename):
+    increased_count = 0
+    sums = []
+    total = 0
+    depths = easy_iterable(filename)
+    
        
 def main():
-    print(prev_measurement_num("data/depths.txt"))
-    print(prev_measurement_num("data/test.txt"))
+    # print(prev_measurement_num("data/depths.txt"))
+    # print(prev_measurement_num("data/test_1.txt"))
+    print(sum_comp("data/test_1.txt"))
 
 if __name__ == "__main__":
     main()
