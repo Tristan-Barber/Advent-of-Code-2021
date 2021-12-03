@@ -1,5 +1,5 @@
 """
-First solution for problem 1 of day 1 of Advent of Code
+Solutions the for problems of day 1 of Advent of Code
 ------------------------
 Tristan Barber
 """
