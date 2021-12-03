@@ -15,7 +15,37 @@ def prev_measurement_num(filename):
             current_depth = int(depth)
             if current_depth > previous_depth:
                 increased_count += 1
-        return increased_count
+        return increased_count-1
+
+"""
+When it reaches a decreased number, it goes back to the decreased and starts the letters over
+199  A      
+200  A B    
+208  A B C  
+210    B C D
+200  E   C D
+207  E F   D
+240  E F G  
+269    F G H
+260      G H
+263        H
+
+A: 607 (N/A - no previous sum)
+B: 618 (increased)
+C: 618 (no change)
+D: 617 (decreased)
+E: 647 (increased)
+F: 716 (increased)
+G: 769 (increased)
+H: 792 (increased)
+"""
+
+def sum_comp(filename):
+    with open(filename) as file:
+        count = 0
+        for depth in file:
+            if count == 3:
+                
        
 def main():
     print(prev_measurement_num("data/depths.txt"))
