@@ -4,19 +4,6 @@ Solutions the for problems of day 1 of Advent of Code
 Tristan Barber
 """
 
-def prev_measurement_num(filename):
-    increased_count = 0
-    with open(filename) as file:
-        for depth in file:
-            try:
-                previous_depth = current_depth
-            except UnboundLocalError:
-                previous_depth = 0
-            current_depth = int(depth)
-            if current_depth > previous_depth:
-                increased_count += 1
-        return increased_count -1
-
 """
 When it reaches a decreased number, it goes back to the decreased and starts the letters over
 199  A      
