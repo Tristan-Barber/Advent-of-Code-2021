@@ -15,7 +15,6 @@ def coordinates(filename):
                 movement = int(line[-2].strip())
             else:
                 movement = 2
-            print(command + str(movement))
             if command == "forward":
                 horizontal_position += movement
             elif command == "down":
