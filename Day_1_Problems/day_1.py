@@ -81,9 +81,10 @@ def sum_comp(filename):
     return sums
 
 def main():
-    # print(prev_measurement_num("data/depths.txt"))
-    # print(prev_measurement_num("data/test_1.txt"))
-    print(sum_comp("data/test_1.txt"))
+    print(prev_measurement_num("day_1_problems/data/depths.txt"))
+    print(prev_measurement_num("day_1_problems/data/test_1.txt"))
+    #Infinite loop Below:
+    #print(sum_comp("day_1_problems/data/test_1.txt"))
 
 if __name__ == "__main__":
     main()
