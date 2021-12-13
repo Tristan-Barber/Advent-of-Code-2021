@@ -23,14 +23,29 @@ def make_boards():
             board = []
     return boards
 
+def find_winner(boards):
+    for num in numbers_to_call:
+        board_num = 0
+        for board in boards:
+            for row in board:
+                num = 0
+                for number in row:
+                    if number == str(num):
+                        row.pop(num)
+                    num += 1
+                if row == []:
+                    return board_num
+            board_num += 1
+
 def main():
     boards = make_boards()
-    for board in boards:
-        for row in board:
-            print(row)
-        print("\n")
-    if "6" in boards[0][2]:
-        print("Found")
+    # for board in boards:
+    #     for row in board:
+    #         print(row)
+    #     print("\n")
+    # if "6" in boards[0][2]:
+    #     print("Found")
+    print(find_winner(boards))
     """
     To DO:
     I have to go into that specific row and do 'in' :(
