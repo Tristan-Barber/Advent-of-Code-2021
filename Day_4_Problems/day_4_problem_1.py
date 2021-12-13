@@ -29,7 +29,15 @@ def main():
         for row in board:
             print(row)
         print("\n")
-    #print(easy_iterable(bingo_board_source))
+    if "6" in boards[0][2]:
+        print("Found")
+    """
+    To DO:
+    I have to go into that specific row and do 'in' :(
+    I should iterate through the rows and boards 
+    Winner = board index in boards
+    Make it check to see if there's 5 in a row everytime it goes through the numbers called
+    """
 
 if __name__ == "__main__":
     main()
