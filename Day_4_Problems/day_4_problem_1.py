@@ -24,18 +24,30 @@ def make_boards():
     return boards
 
 def find_winner(boards):
-    for num in numbers_to_call:
-        board_num = 0
+    for number in numbers_to_call:
         for board in boards:
             for row in board:
-                num = 0
-                for number in row:
-                    if number == str(num):
-                        row.pop(num)
-                    num += 1
+                i = 0
+                for num in row:
+                    if num == str(number):
+                        row.pop(i)
+                    i+=1
                 if row == []:
-                    return board_num
-            board_num += 1
+                    return board, number
+                
+    # for board in boards:
+    #     for row in board:
+    #         print(row)
+    #     print("\n")
+
+def winning_score(winning_board, winning_number):
+    sum = 0
+    for row in winning_board:
+        for number in row:
+            sum += int(number)
+    print(sum)
+    score = sum * winning_number
+    return score
 
 def main():
     boards = make_boards()
@@ -45,7 +57,9 @@ def main():
     #     print("\n")
     # if "6" in boards[0][2]:
     #     print("Found")
-    print(find_winner(boards))
+    winning_board, winning_number = find_winner(boards)
+    print(winning_score(winning_board, winning_number))
+
     """
     To DO:
     I have to go into that specific row and do 'in' :(
