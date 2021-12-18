@@ -53,8 +53,8 @@ def winning_score(winning_board, winning_number):
     return score
 
 def main():
-    boards = make_boards(test_bingo)
-    winning_board, winning_number = find_winner(boards, test_numbers)
+    boards = make_boards(bingo_board_source)
+    winning_board, winning_number = find_winner(boards, numbers_to_call)
     print(winning_score(winning_board, winning_number))
 
 if __name__ == "__main__":
