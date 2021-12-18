@@ -12,12 +12,14 @@ def create_graph(size):
     return graph
 
 def arrow_parser(filename):
-    coordinated = []
+    coordinates = []
     with open(filename) as file:
         for line in file:
             line.strip()
             line = line.split(" -> ")
-            line[1].replace('\n', "")
+            line[1] = line[1].replace('\n', "")
+            line[0] = line[0].split(",")
+            line[1] = line[1].split(",")
             print(line)
 
 def main():
