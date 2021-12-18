@@ -20,11 +20,21 @@ def arrow_parser(filename):
             line[1] = line[1].replace('\n', "")
             line[0] = line[0].split(",")
             line[1] = line[1].split(",")
-            print(line)
+            coordinates.append(line)
+        return coordinates
+
+def plot_points(graph, coordinates):
+    sum = 0
+    for group in coordinates:
+        for pair in group:
+            for coordinate in pair:
+                print(coordinate)
+    return sum
 
 def main():
-    graph = create_graph(20)
-    arrow_parser(main_data)
+    graph = create_graph(1000)
+    coordinates = arrow_parser(main_data)
+    print(plot_points(graph, coordinates))
 
 if __name__ == "__main__":
     main()
